@@ -8,6 +8,7 @@
   - [2.3. Variable Assignments](#23-variable-assignments)
     - [2.3.1. Dynamic Typing](#231-dynamic-typing)
   - [2.4. Strings](#24-strings)
+- [Commands](#commands)
 
 # 1. Python overview
 
@@ -108,3 +109,5 @@
   - You need to be aware of type()
 
 ## 2.4. Strings
+
+# Commands
