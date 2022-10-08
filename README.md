@@ -1,3 +1,7 @@
+# Python overview, commands and examples <!-- omit in toc -->
+
+## Contents <!-- omit in toc -->
+
 - [1. Python overview](#1-python-overview)
   - [1.1. Brief History of Python](#11-brief-history-of-python)
   - [1.2. Why Choose Python?](#12-why-choose-python)
@@ -8,7 +12,22 @@
   - [2.3. Variable Assignments](#23-variable-assignments)
     - [2.3.1. Dynamic Typing](#231-dynamic-typing)
   - [2.4. Strings](#24-strings)
-- [Commands](#commands)
+    - [2.4.1. String Formatting for Printing](#241-string-formatting-for-printing)
+  - [2.5. List and Dictionaries](#25-list-and-dictionaries)
+    - [2.5.1. List](#251-list)
+    - [2.5.2. Dictionaries](#252-dictionaries)
+    - [2.5.3. Dictionaries or List?](#253-dictionaries-or-list)
+  - [2.6. Tuples](#26-tuples)
+  - [2.7. Sets](#27-sets)
+  - [2.8. Booleans](#28-booleans)
+  - [2.9. Files](#29-files)
+  - [2.10. Resume](#210-resume)
+- [3. Python Statements](#3-python-statements)
+  - [3.1. If, Elif, Else Statements](#31-if-elif-else-statements)
+  - [3.2. For Loops](#32-for-loops)
+  - [3.3. While Loops](#33-while-loops)
+  - [3.4. List Comprehensions](#34-list-comprehensions)
+- [4. Commands](#4-commands)
 
 # 1. Python overview
 
@@ -92,13 +111,13 @@
 - Work in python
   ```
   my_customer = 2
-  my_customer = [ “Sammy” ,  “Frankie” ]
+  my_customer = [ "Sammy" ,  "Frankie" ]
   ```
 - Don't work in other languages E.g. C#, Java, C++
 
   ```
   int my_customer = 1;
-  my_customer = “Sammy” ;  //RESULTS IN ERROR
+  my_customer = "Sammy" ;  //RESULTS IN ERROR
   ```
 
 - Pros of Dynamic Typing:
@@ -110,4 +129,199 @@
 
 ## 2.4. Strings
 
-# Commands
+- Strings are sequences of characters, using the syntax of either single quotes or double quotes:
+  - 'hello'
+  - "Hello"
+  - " I don't do that "
+- Because strings are ordered sequences it means we can using indexing and slicing to grab sub-sections of the string.
+- Indexing notation uses `[ ]` notation after the string (or variable assigned the string).
+- Indexing allows you to grab a single character from the string...
+- These actions use `[ ]` square brackets and a number index to indicate
+- positions of what you wish to grab:
+
+```
+Character:     h     e     l      l    o
+Index:         0     1     2      3    4
+Reverse Index: 0    -4    -3     -2   -1
+```
+
+- Slicing allows you to grab a subsection of multiple characters, a "slice" of the string.
+- This has the following syntax: `[start:stop:step]`
+  - **start** is a numerical index for the slice start
+  - **stop** is the index you will go up to (but not include)
+  - **step** is the size of the "jump" you take.
+
+### 2.4.1. String Formatting for Printing
+
+- Often you will want to "inject" a variable into your string for printing.
+- For example:
+  ```
+  my_name = "Jose"
+  print("Hello " + my_name)
+  ```
+- There are multiple ways to format strings for printing variables in them.
+- This is known as string interpolation.
+- Below two methods for this:
+  - `.format() method`
+  - `f-strings (formatted string literals)`
+
+## 2.5. List and Dictionaries
+
+### 2.5.1. List
+
+- Lists are ordered sequences that can hold a variety of object types.
+- They use [] brackets and commas to separate objects in the list.
+  - `[1,2,3,4,5]`
+- Lists support indexing and slicing.
+- Lists can be nested and also have a variety of useful methods that can be called off of them.
+
+### 2.5.2. Dictionaries
+
+- Dictionaries are unordered mappings for storing objects.
+- Previously we saw how lists store objects in an ordered sequence, dictionaries use a key-value pairing instead.
+- This key-value pair allows users to quickly grab objects without needing to know an index location.
+- Dictionaries use curly braces and colons to signify the keys and their associated values.
+  - `{'key1':'value1','key2':'value2'}`
+
+### 2.5.3. Dictionaries or List?
+
+- So when to choose a list and when to choose a dictionary?
+  - Dictionaries: Objects retrieved by key name.
+    - Unordered and can not be sorted.
+  - Lists: Objects retrieved by location.
+    - Ordered Sequence can be indexed or sliced.
+
+## 2.6. Tuples
+
+- Tuples are very similar to lists.
+  - However they have one key difference - immutability.
+- Once an element is inside a tuple, it can not be reassigned.
+- Tuples use parenthesis: `(1,2,3)`
+
+## 2.7. Sets
+
+- Sets are unordered collections of unique elements.
+- Meaning there can only be one representative of the same object.
+
+## 2.8. Booleans
+
+- Booleans are operators that allow you to convey `True` or `False` statements.
+- These are very important later on when we deal with control flow and logic!
+
+## 2.9. Files
+
+- Python has a built-in open() function to open a file. This function returns a file object, also called a handle, as it is used to read or modify the file accordingly.
+- open file in current directory.
+  - `f = open("test.txt")`
+  - `f = open("C:/Python38/README.txt")`
+- We can specify the mode while opening a file.
+- We can also specify if we want to open the file in text mode or binary mode.
+- The default is reading in text mode.
+  - In this mode, we get strings when reading from the file.
+
+| Mode | Description                                                                                                       |
+| ---- | ----------------------------------------------------------------------------------------------------------------- |
+| r    | Opens a file for reading. (default)                                                                               |
+| w    | Opens a file for writing. Creates a new file if it does not exist or truncates the file if it exists.             |
+| x    | Opens a file for exclusive creation. If the file already exists, the operation fails.                             |
+| a    | Opens a file for appending at the end of the file without truncating it. Creates a new file if it does not exist. |
+| t    | Opens in text mode. (default)                                                                                     |
+| b    | Opens in binary mode.                                                                                             |
+| +    | Opens a file for updating (reading and writing)                                                                   |
+
+## 2.10. Resume
+
+- Numbers: Store numerical information and come in two forms:
+  - Integers - Whole Numbers.
+  - Floating Point - Numbers with a decimal.
+- Strings: Ordered sequence of characters.
+- Lists: Ordered sequence of objects (mutable).
+- Tuples: Ordered sequence of objects (immutable).
+- Dictionary: Key-Value pairing that is unordered.
+
+# 3. Python Statements
+
+## 3.1. If, Elif, Else Statements
+
+- We often only want certain code to execute when a particular condition has been met.
+- For example, `if my dog is hungry (some condition), then I will feed the dog (some action)`.
+- To control this flow of logic we use some keywords:
+  - `if`
+  - `elif`
+  - `else`
+- Control Flow syntax makes use of colons and indentation (whitespace).
+- This indentation system is crucial to Python and is what sets it apart from other programming languages.
+
+- Syntax of an `if` statement:
+
+  ```
+  if some_condition:
+    # execute some code
+  ```
+
+- Syntax of an `if/else` statement:
+
+  ```
+  if some_condition:
+    # execute some code
+  else:
+    # do something else
+  ```
+
+- Syntax of an if/else statement:
+
+  ```
+    if some_condition:
+      # execute some code
+    elif some_other_condition:
+      # do something different
+    else:
+      # do something else
+  ```
+
+## 3.2. For Loops
+
+- Many objects in Python are "iterable", meaning we can iterate over every element in the object.
+- Such as every element in a list or every character in a string.
+- We can use for loops to execute a block of code for every iteration.
+- The term iterable means you can "iterate" over the object.
+- For example you can iterate over every character in a string, iterate over every item in a list, iterate over every key in a dictionary.
+
+  ```
+    my_iterable = [1,2,3]
+    for item_name in my_iterable:
+      print(item_name)
+    >> 1
+    >> 2
+    >> 3
+  ```
+
+## 3.3. While Loops
+
+- While loops will continue to execute a block of code while some condition remains `True`.
+- For example: `while` my pool is not full, keep filling my pool with water.
+- Other example: `while` my dogs are still hungry, keep feeding my dogs.
+- Syntax of a while loop:
+  ```
+    while some_boolean_condition:
+      #do something
+  ```
+- You can combine with an else if you want
+  ```
+    while some_boolean_condition:
+      #do something
+    else:
+      #do something different
+  ```
+
+## 3.4. List Comprehensions
+
+- List Comprehensions are a unique way of quickly creating a list with Python.
+- If you find yourself using a for loop along with .append() to create a list, List Comprehensions are a good alternative!
+
+# 4. Commands
+
+- Execute python script .py
+  - python myfile.py
+- Execute test with PyTest
+  - pytest -v
