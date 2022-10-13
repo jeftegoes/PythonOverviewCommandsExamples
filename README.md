@@ -156,7 +156,7 @@ Reverse Index: 0    -4    -3     -2   -1
 - Often you will want to "inject" a variable into your string for printing.
 - For example:
   ```
-  my_name = "Jose"
+  my_name = "Jefté"
   print("Hello " + my_name)
   ```
 - There are multiple ways to format strings for printing variables in them.
@@ -322,6 +322,9 @@ Reverse Index: 0    -4    -3     -2   -1
 # 4. Commands
 
 - Execute python script .py
-  - python myfile.py
+  - python `<py_file>`
 - Execute test with PyTest
   - pytest -v
+  - python -m pytest -v
+- Install others packages/components
+  - pip install -u `<package_name>`
