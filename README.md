@@ -27,7 +27,15 @@
   - [3.2. For Loops](#32-for-loops)
   - [3.3. While Loops](#33-while-loops)
   - [3.4. List Comprehensions](#34-list-comprehensions)
-- [4. Commands](#4-commands)
+- [4. Methods and Functions](#4-methods-and-functions)
+  - [4.1. Function](#41-function)
+- [5. Object Oriented Programming](#5-object-oriented-programming)
+- [6. Modules and Packages](#6-modules-and-packages)
+  - [6.1. Pip](#61-pip)
+  - [6.2. Own Modules and Packages](#62-own-modules-and-packages)
+- [7. Errors and Exception Handling](#7-errors-and-exception-handling)
+- [8. Decorators](#8-decorators)
+- [9. Commands](#9-commands)
 
 # 1. Python overview
 
@@ -37,7 +45,7 @@
 - Python 3 released in 2008.
 - Specifically designed as an easy to use language.
 - High focus on readability of code.
-- Focuses on optimizing developer time, rather than a computer’s processing time.
+- Focuses on optimizing developer time, rather than a computer's processing time.
 - Great documentation online:
   - [Python documentation](https://docs.python.org/3/)
 
@@ -319,7 +327,90 @@ Reverse Index: 0    -4    -3     -2   -1
 - List Comprehensions are a unique way of quickly creating a list with Python.
 - If you find yourself using a for loop along with .append() to create a list, List Comprehensions are a good alternative!
 
-# 4. Commands
+# 4. Methods and Functions
+
+## 4.1. Function
+
+- Creating a function requires a very specific syntax, including the `def` keyword, correct indentation, and proper structure.
+
+  ```
+    def name_of_function(name):
+      '''
+      Docstring explains function.
+      '''
+      print("Hello "+name)
+
+  >> name_of_function("Jefté")
+  >> Hello Jefté
+  ```
+
+- Typically we use the `return` keyword to send back the result of the function, instead of just printing it out.
+- `return` allows us to assign the output of the function to a new variable.
+
+  ```
+    def add_function(num1,num2):
+      return num1+num2
+
+  >> result = add_function(1,2)
+  >>
+  >> print(result)
+  >> 3
+  ```
+
+# 5. Object Oriented Programming
+
+- Object Oriented Programming (OOP) allows programmers to create their own objects that have methods and attributes.
+- Recall that after defining a string,list, dictionary, or other objects, you were able to call methods off of them with the .method_name() syntax.
+- These methods act as functions that use information about the object, as well as the object itself to return results, or change the current object.
+
+  ```
+    class NameOfClass():
+      def __init__(self,param1,param2):
+        self.param1 = param1
+        self.param2 = param2
+
+      def some_method(self):
+        # perform some action
+        print(self.param1)
+  ```
+
+# 6. Modules and Packages
+
+## 6.1. Pip
+
+- PyPI is a repository for open-source third-party Python packages.
+- It's similar to RubyGems in the Ruby world, PHP's Packagist, CPAN for Perl, and NPM for Node.js
+- So far we've really only used libraries that come internally with Python.
+- There are many other libraries available that people have open-sourced and shared on PyPi.
+- We can use `pip install` at the command line to install these packages.
+- By installing Python from python.org or through the Anaconda distribution you also installed `pip`
+- `pip` is a simple way to download packages at your command line directly from the PyPi repository.
+
+## 6.2. Own Modules and Packages
+
+- An often confusing part of Python is a mysterious line of code: `if __name__ == "__main__":`
+  - Sometimes when you are importing from a module, you would like to know whether a modules function is being used as an import, or if you are using the original .py file of that module.
+
+# 7. Errors and Exception Handling
+
+- Errors are bound to happen in your code!
+- Especially when someone else ends up using it in an unexpected way.
+- We can use error handling to attempt to plan for possible errors.
+- For example, a user may try to write to a file that was only opened in `mode='r'`
+- Currently if there is any type of error in your code, the entire script will stop.
+- We can use Error Handling to let the script continue with other code, even if there is an error.
+- We use three keywords for this:
+  - `try`: This is the block of code to be attempted (may lead to an error)
+  - `except`: Block of code will execute in case there is an error in try block
+  - `finally`: A final block of code to be executed, regardless of an error.
+
+# 8. Decorators
+
+- Decorators allow you to "decorate" a function, let's discuss what that word means in this context.
+- Python has `decorators` that allow you to tack on extra functionality to an already existing function.
+- They use the `@` operator and are then placed on top of the original function.
+
+# 9. Commands
 
 - Execute python script .py
   - python `<py_file>`
