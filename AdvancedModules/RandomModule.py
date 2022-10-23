@@ -1,0 +1,20 @@
+import random
+
+print(f"1: {random.randint(0, 100)}")
+random.seed(101)
+print(f"2: {random.randint(0, 100)}")
+print(f"3: {random.randint(0, 100)}")
+print(f"4: {random.randint(0, 100)}")
+print(f"5: {random.randint(0, 100)}")
+print(f"6: {random.randint(0, 100)}")
+
+my_list = list(range(0, 20))
+print(f"7: {(my_list)}")
+print(f"8: {(random.choice(my_list))}")
+print(f"9: {(random.choices(population=my_list, k=10))}")
+print(f"10: {(random.sample(population=my_list, k=10))}")
+print(f"11: {(my_list)}")
+random.shuffle(my_list)
+print(f"12: {(my_list)}")
+print(f"13: {(random.uniform(a=0, b=100))}")
+print(f"14: {(random.gauss(mu=0, sigma=1))}")
