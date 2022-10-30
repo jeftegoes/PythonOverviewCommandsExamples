@@ -1,8 +1,18 @@
-# 1. Introduction
+- [1. Introdução](#1-introdução)
+- [2. Criar uma classe para representar a entidade Livros:](#2-criar-uma-classe-para-representar-a-entidade-livros)
+- [3. Criar uma classe para representar a entidade Cliente](#3-criar-uma-classe-para-representar-a-entidade-cliente)
+- [4. Criar uma classe para representar a entidade Pedido](#4-criar-uma-classe-para-representar-a-entidade-pedido)
+- [5. Importar o arquivo .CSV e para CADA LINHA (DADO) do .CSV instanciar um objeto dentro de uma lista:](#5-importar-o-arquivo-csv-e-para-cada-linha-dado-do-csv-instanciar-um-objeto-dentro-de-uma-lista)
+- [6. O sistema ao iniciar SEMPRE deve importar o arquivo CSV.](#6-o-sistema-ao-iniciar-sempre-deve-importar-o-arquivo-csv)
+- [7. Criar uma classe para representar as interações com o usuário.](#7-criar-uma-classe-para-representar-as-interações-com-o-usuário)
+- [8. O sistema deve conter as seguintes validações, lembrando que cada validação dessa deve ter sua respectiva função e seu respectivo teste unitário/integração.](#8-o-sistema-deve-conter-as-seguintes-validações-lembrando-que-cada-validação-dessa-deve-ter-sua-respectiva-função-e-seu-respectivo-teste-unitáriointegração)
+- [9. Formato dos relatórios](#9-formato-dos-relatórios)
 
-- The company Livraria Digital needs a system in Python to read a .CSV file to start its Book Sales system.
+# 1. Introdução
 
-- The file has the following structure:
+- A empresa Livraria Digital precisa de um sistema em Python para ler um arquivo .CSV para inicializar seu sistema de Venda de Livros.
+
+- O arquivo tem a seguinte estrutura:
 
 ```
 Titulo;Isbn;Autor;Assunto;Valor;
@@ -12,21 +22,21 @@ A Um - Poemas;85-85851-40-6;Robert Creeley;Poesia, Literatura estrangeira, Bilí
 (...)
 ```
 
-# 2. Create a class to represent the Books entity:
+# 2. Criar uma classe para representar a entidade Livros:
 
-- Create the class to represent the manipulation/validation/operations of the Book list.
+- Criar a classe para representar a manipulação/validação/operações da lista de Livros
 
-# 3. Create a class to represent the Customer entity
+# 3. Criar uma classe para representar a entidade Cliente
 
-- Create the class to represent the manipulation/validation/operations of the list of Customers.
+- Criar a classe para representar a manipulação/validação/operações da lista de Clientes
 
-# 4. Create a class to represent the Order entity
+# 4. Criar uma classe para representar a entidade Pedido
 
-- Create the class to represent manipulation/validation/operations of the list of Orders.
+- Criar a classe para representar a manipulação/validação/operações da lista de Pedidos
 
-# 5. Import the .CSV file and for EACH LINE (DATA) of the .CSV instantiate an object inside a list:
+# 5. Importar o arquivo .CSV e para CADA LINHA (DADO) do .CSV instanciar um objeto dentro de uma lista:
 
-- Create a class for the responsibility of importing the file:
+- Criar uma classe para com a resposabilidade de importar o arquivo:
 
 ```
 file_book = list(open("books.csv", "r", encoding="utf-8"))
@@ -46,26 +56,24 @@ for book in file_book[1:]:
     list_books.append(book)
 ```
 
-# 6. The system when starting must ALWAYS import the CSV file.
+# 6. O sistema ao iniciar SEMPRE deve importar o arquivo CSV.
 
-# 7. Create a class to represent User Interactions.
+# 7. Criar uma classe para representar as interações com o usuário.
 
-# 8. The system must contain the following validations, remembering that each validation must have its respective function and its respective unit/integration test.
+# 8. O sistema deve conter as seguintes validações, lembrando que cada validação dessa deve ter sua respectiva função e seu respectivo teste unitário/integração.
 
-- Test option of menu.
-- Check if menu options exists.
-- Check if the book's stock has been downed.
-- Do not allow entering a customer code that already exists.
-- Do not allow entering an order code that already exists.
-- Do not allow selling a book with zero price.
-- Do not allow placing an order without a customer.
-- Do not allow an order without a book.
-- It is only allowed to inform ONE order in the order.
-- If the format of the value of is wrong, return 0.
-- Do not allow selling the same book again, as the bookstore only has 1 stock.
-- Check if the code of the book being sold exists, if it does not exist, abort the order and return to the menu.
+- Verificar se o estoque do livro foi baixado
+- Não permitir inserir um código de cliente que já existe
+- Não permitir inserir um código de pedido que já existe
+- Não permitir vender um livro com valor zerado
+- Não permitir fazer um pedido sem cliente
+- Não permitir um pedido sem livro
+- Só é permitido informar UM pedido no pedido
+- Caso o formato do valor do esteja errado retornar 0
+- Não permitir vender o mesmo livro novamente, pois a livraria só possui 1 estoque
+- Verificar se o código do livro que está sendo vendido, existe, caso não exista aborta o pedido e volta para o menu
 
-# 9. Format of reports
+# 9. Formato dos relatórios
 
 ```
 ***** Relatório de clientes *****
