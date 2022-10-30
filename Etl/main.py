@@ -34,6 +34,22 @@ def get_customer(customer_id: int, customer_repository: CustomerRepository) -> C
     return Customer(-1, "Client not found!")
 
 
+def verif_if_book_exists(book_id: int) -> bool:
+    for book in list_books:
+        if (book.id == book_id):
+            return True
+
+    return False
+
+
+def get_book(book_id: int):
+    for book in list_books:
+        if (book.id == book_id):
+            return book
+
+    return Book(-1, "Book not found!", "", "", "", 0)
+
+
 def principal_menu() -> int:
     try:
         print("1 - Cadastrar cliente")
@@ -62,11 +78,14 @@ while True:
     if (menu_option == 0):
         break
 
+    print("\n")
+
     if menu_option == 1:
         id = int(input("Informe o código do cliente: "))
         nome = input("Informe o nome do cliente: ")
         customer = Customer(id, nome)
         customer_repository.list_customers.append(customer)
+        print("Client cadastrado com sucesso!")
     if menu_option == 2:
         id = int(input("Informe o código do pedido: "))
         customer_id = int(input("Informe o código do cliente: "))
@@ -76,19 +95,28 @@ while True:
             continue
 
         customer = get_customer(customer_id, customer_repository)
-        order = Order(id, customer, today)
-        order_repository.list_orders.append(order)
-    if menu_option == 3:
-        formatText = "{0:<10} {1:<20}\n"
-        menu = ("***** Relatório de clientes *****\n")
-        menu += formatText.format("Id", "Cliente")
+        book_id = int(input("Informe o código do livro: "))
 
-        for customer in customer_repository.list_customers:
-            menu += formatText.format(customer.id, customer.name)
-        print(menu)
+        if (not verif_if_book_exists(book_id)):
+            print("Livro não existe!")
+            continue
+
+        book = get_book(book_id)
+        order = Order(id, customer, today)
+        order.purchased_book = book
+
+        order_repository.list_orders.append(order)
+        print("Pedido cadastrado com sucesso!")
+    if menu_option == 3:
+        print("\n***** Relatório de pedidos *****\n")
+        for order in order_repository.list_orders:
+            print(f"Código do Pedido: {order.id}")
+            print(f"Cliente: {order.customer.name}")
+            print(f"Data do pedido: {order.date_order}")
+            print(f"Livro escolhido: {order.purchased_book.name} \n")
     if menu_option == 4:
         formatText = "{0:<10} {1:<20}\n"
-        menu = ("***** Relatório de clientes *****\n")
+        menu = ("\n***** Relatório de clientes *****\n")
         menu += formatText.format("Id", "Cliente")
 
         for customer in customer_repository.list_customers:
@@ -96,7 +124,7 @@ while True:
         print(menu)
     if menu_option == 5:
         formatText = "{0:<10} {1:<20} {1:<20} {1:<20} {1:<20} {1:<20}\n"
-        menu = ("***** Relatório de livros cadastrados *****\n")
+        menu = ("\n***** Relatório de livros cadastrados *****\n")
         menu += formatText.format("Id", "Ttítulo", "ISBN",
                                   "Autor", "Assunto", "Valor", "Estoque")
 

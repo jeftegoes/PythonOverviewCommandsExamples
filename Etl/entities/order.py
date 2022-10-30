@@ -9,5 +9,5 @@ class Order:
         self.id = id
         self.customer = customer
         self.date_order = date_order
-        self.purchased_books: list[Book] = []
+        self.purchased_book: Book
         self.total_price: float = 0
