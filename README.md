@@ -36,7 +36,12 @@
 - [7. Errors and Exception Handling](#7-errors-and-exception-handling)
 - [8. Decorators](#8-decorators)
 - [9. Generators](#9-generators)
-- [10. Commands](#10-commands)
+- [10. Web Scraping](#10-web-scraping)
+  - [10.1. Rules of Web Scraping](#101-rules-of-web-scraping)
+  - [10.2. Limitations of Web Scraping](#102-limitations-of-web-scraping)
+  - [10.3. Basic HTML and CSS](#103-basic-html-and-css)
+  - [10.4. How to scrape](#104-how-to-scrape)
+- [11. Commands](#11-commands)
 
 # 1. Python overview
 
@@ -424,7 +429,63 @@ Reverse Index: 0    -4    -3     -2   -1
 - Instead it just keeps track of the last number and the step size, to provide a flow of numbers.
 - If a user did need the list, they have to transform the generator to a list with list(range(0,10)).
 
-# 10. Commands
+# 10. Web Scraping
+
+- Web scraping is a general term for techniques involving automating the gathering of data from a website.
+- When a browser loads a website, the user gets to see what is known as the "front-end" of the website
+
+## 10.1. Rules of Web Scraping
+
+- Always try to get permission before scraping!
+- If you make too many scraping attempts or requests your IP Address could get blocked!
+- Some sites automatically block scraping software.
+
+## 10.2. Limitations of Web Scraping
+
+- In general every website is unique, which means every web scraping script is unique.
+- A slight change or update to a website may completely break your web scraping script.
+
+## 10.3. Basic HTML and CSS
+
+- When viewing a website, the browser doesn't show you all the source code behind the website, instead it shows you the HTML and some CSS and JS that the website sends to your browser.
+- HTML is used to create the basic structure and content of a webpage.
+- CSS is used for the design and style of a web page, where elements are placed and how it looks.
+- JavaScript is used to define the interactive elements of a webpage.
+- For effective basic web scraping we only need to have a basic understanding of HTML and CSS.
+- Python can view these HTML and CSS elements programmatically, and then extract information from the website.
+- HTML is Hypertext Markup Language and is present on every website on the internet.
+- You can right-click on a website and select "View Page Source" to get an example.
+- Let's see a small example of HTML and CSS code:
+
+  ```
+  style.css file:
+  #para2 {​
+      color: red;​
+  }
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <link rel="stylesheet" href="styles.css">
+      <title>Some Title</title>
+      </head>
+      <body>
+          <p id='para2'> Some Text </p>
+      <body>
+  </html>
+  ```
+
+## 10.4. How to scrape
+
+- To web scrape with Python we can use the BeautifulSoup and requests libraries.​
+- These are external libraries outside of Python so you need to install them with either conda or pip at your command line.
+- Directly at your command line use:​
+  - `pip install requests​`
+  - `pip install lxml​`
+  - `pip install bs4​`
+  - Or for Anaconda distributions, use conda install instead of pip install.
+
+# 11. Commands
 
 - Execute python script .py
   - python `<py_file>`
