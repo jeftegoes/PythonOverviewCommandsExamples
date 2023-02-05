@@ -54,3 +54,18 @@ print(f"8: {my_circle.pi}")
 print(f"9: {my_circle.radius}")
 print(f"10: {my_circle.area}")
 print(f"11: {my_circle.get_circumference()}")
+
+
+class Student:
+    def __init__(self, name, grades) -> None:
+        self.name = name
+        self.grades = grades
+
+    def average_grade(self):
+        return sum(self.grades) / len(self.grades)
+
+
+student1 = Student("Jefté", (100, 100, 93, 78, 90))
+student2 = Student("Brenno", (90, 90, 93, 78, 90))
+print(f"12: {student1.average_grade()}")
+print(f"13: {student2.average_grade()}")
