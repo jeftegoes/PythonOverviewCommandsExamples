@@ -28,7 +28,6 @@
   - [3.3. While Loops](#33-while-loops)
   - [3.4. List Comprehensions](#34-list-comprehensions)
 - [4. Methods and Functions](#4-methods-and-functions)
-  - [4.1. Function](#41-function)
 - [5. Object Oriented Programming](#5-object-oriented-programming)
 - [6. Modules and Packages](#6-modules-and-packages)
   - [6.1. Pip](#61-pip)
@@ -294,6 +293,8 @@ Reverse Index: 0    -4    -3     -2   -1
       # do something else
   ```
 
+[Example](PythonStatements/if_elif_and_else_statements.py)
+
 ## 3.2. For Loops
 
 - Many objects in Python are "iterable", meaning we can iterate over every element in the object.
@@ -310,6 +311,8 @@ Reverse Index: 0    -4    -3     -2   -1
     >> 2
     >> 3
   ```
+
+[Example](PythonStatements/for_loops.py)
 
 ## 3.3. While Loops
 
@@ -329,14 +332,18 @@ Reverse Index: 0    -4    -3     -2   -1
       #do something different
   ```
 
+[Example](PythonStatements/while_loops.py)
+
 ## 3.4. List Comprehensions
 
 - List Comprehensions are a unique way of quickly creating a list with Python.
 - If you find yourself using a for loop along with .append() to create a list, List Comprehensions are a good alternative!
 
-# 4. Methods and Functions
+[Example](PythonStatements/list_comprehensions.py)
+[Examples](ObjectAndDataStructureBasics/Lists.py)
+[Examples](AdvancedObjectsAndDataStructures/Lists.py)
 
-## 4.1. Function
+# 4. Methods and Functions
 
 - Creating a function requires a very specific syntax, including the `def` keyword, correct indentation, and proper structure.
 
@@ -364,6 +371,8 @@ Reverse Index: 0    -4    -3     -2   -1
   >> 3
   ```
 
+[Examples](MethodsAndFunctions/)
+
 # 5. Object Oriented Programming
 
 - Object Oriented Programming (OOP) allows programmers to create their own objects that have methods and attributes.
@@ -380,6 +389,8 @@ Reverse Index: 0    -4    -3     -2   -1
         # perform some action
         print(self.param1)
   ```
+
+[Examples](ObjectOrientedProgramming/)
 
 # 6. Modules and Packages
 
@@ -411,11 +422,15 @@ Reverse Index: 0    -4    -3     -2   -1
   - `except`: Block of code will execute in case there is an error in try block
   - `finally`: A final block of code to be executed, regardless of an error.
 
+[Example](ErrorsAndExceptionHandling/)
+
 # 8. Decorators
 
 - Decorators allow you to "decorate" a function, let's discuss what that word means in this context.
 - Python has `decorators` that allow you to tack on extra functionality to an already existing function.
 - They use the `@` operator and are then placed on top of the original function.
+
+[Example](Decorators/)
 
 # 9. Generators
 
@@ -430,13 +445,15 @@ Reverse Index: 0    -4    -3     -2   -1
 - Instead it just keeps track of the last number and the step size, to provide a flow of numbers.
 - If a user did need the list, they have to transform the generator to a list with list(range(0,10)).
 
+[Example](Generators/)
+
 # 10. Interfaces
 
 - Interface is a powerful concept in object-oriented programming that, allows us to define a common set of methods that implementing classes must provide.
 - It helps establish a contract between classes, ensuring that certain methods are available and must be implemented in each class that implements the interface.
 - **Python doesn't have explicit interfaces** like some other programming languages (Java, C#) but, we can do this using abstract base classes (ABCs).
 
-[Example](AbcAndInterfaces/)
+[Examples](AbcAndInterfaces/)
 
 # 11. Web Scraping
 
