@@ -36,12 +36,13 @@
 - [7. Errors and Exception Handling](#7-errors-and-exception-handling)
 - [8. Decorators](#8-decorators)
 - [9. Generators](#9-generators)
-- [10. Web Scraping](#10-web-scraping)
-  - [10.1. Rules of Web Scraping](#101-rules-of-web-scraping)
-  - [10.2. Limitations of Web Scraping](#102-limitations-of-web-scraping)
-  - [10.3. Basic HTML and CSS](#103-basic-html-and-css)
-  - [10.4. How to scrape](#104-how-to-scrape)
-- [11. Commands](#11-commands)
+- [10. Interfaces](#10-interfaces)
+- [11. Web Scraping](#11-web-scraping)
+  - [11.1. Rules of Web Scraping](#111-rules-of-web-scraping)
+  - [11.2. Limitations of Web Scraping](#112-limitations-of-web-scraping)
+  - [11.3. Basic HTML and CSS](#113-basic-html-and-css)
+  - [11.4. How to scrape](#114-how-to-scrape)
+- [12. Commands](#12-commands)
 
 # 1. Python overview
 
@@ -429,23 +430,33 @@ Reverse Index: 0    -4    -3     -2   -1
 - Instead it just keeps track of the last number and the step size, to provide a flow of numbers.
 - If a user did need the list, they have to transform the generator to a list with list(range(0,10)).
 
-# 10. Web Scraping
+# 10. Interfaces
+
+- Interface is a powerful concept in object-oriented programming that, allows us to define a common set of methods that implementing classes must provide.
+- It helps establish a contract between classes, ensuring that certain methods are available and must be implemented in each class that implements the interface.
+- **Python doesn't have explicit interfaces** like some other programming languages (Java, C#) but, we can do this using abstract base classes (ABCs).
+
+[Example](AbcAndInterfaces/)
+
+# 11. Web Scraping
 
 - Web scraping is a general term for techniques involving automating the gathering of data from a website.
 - When a browser loads a website, the user gets to see what is known as the "front-end" of the website
 
-## 10.1. Rules of Web Scraping
+[Example](WebScraping/)
+
+## 11.1. Rules of Web Scraping
 
 - Always try to get permission before scraping!
 - If you make too many scraping attempts or requests your IP Address could get blocked!
 - Some sites automatically block scraping software.
 
-## 10.2. Limitations of Web Scraping
+## 11.2. Limitations of Web Scraping
 
 - In general every website is unique, which means every web scraping script is unique.
 - A slight change or update to a website may completely break your web scraping script.
 
-## 10.3. Basic HTML and CSS
+## 11.3. Basic HTML and CSS
 
 - When viewing a website, the browser doesn't show you all the source code behind the website, instead it shows you the HTML and some CSS and JS that the website sends to your browser.
 - HTML is used to create the basic structure and content of a webpage.
@@ -475,7 +486,7 @@ Reverse Index: 0    -4    -3     -2   -1
   </html>
   ```
 
-## 10.4. How to scrape
+## 11.4. How to scrape
 
 - To web scrape with Python we can use the BeautifulSoup and requests libraries.​
 - These are external libraries outside of Python so you need to install them with either conda or pip at your command line.
@@ -485,7 +496,7 @@ Reverse Index: 0    -4    -3     -2   -1
   - `pip install bs4​`
   - Or for Anaconda distributions, use conda install instead of pip install.
 
-# 11. Commands
+# 12. Commands
 
 - Execute python script .py
   - python `<py_file>`
