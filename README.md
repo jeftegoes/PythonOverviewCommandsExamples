@@ -293,7 +293,7 @@ Reverse Index: 0    -4    -3     -2   -1
       # do something else
   ```
 
-[Example](PythonStatements/if_elif_and_else_statements.py)
+[Example](Statements/if_elif_and_else_statements.py)
 
 ## 3.2. For Loops
 
@@ -312,7 +312,7 @@ Reverse Index: 0    -4    -3     -2   -1
     >> 3
   ```
 
-[Example](PythonStatements/for_loops.py)
+[Example](Statements/for_loops.py)
 
 ## 3.3. While Loops
 
@@ -332,14 +332,14 @@ Reverse Index: 0    -4    -3     -2   -1
       #do something different
   ```
 
-[Example](PythonStatements/while_loops.py)
+[Example](Statements/while_loops.py)
 
 ## 3.4. List Comprehensions
 
 - List Comprehensions are a unique way of quickly creating a list with Python.
 - If you find yourself using a for loop along with .append() to create a list, List Comprehensions are a good alternative!
 
-[Example](PythonStatements/list_comprehensions.py)
+[Example](Statements/list_comprehensions.py)
 [Examples](ObjectAndDataStructureBasics/Lists.py)
 [Examples](AdvancedObjectsAndDataStructures/Lists.py)
 
